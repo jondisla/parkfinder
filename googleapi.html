@@ -6,7 +6,7 @@
     <title>Directions for Park Finder Web Based App</title>
     
     
-    <h1> PARKFinder Driving Directions </h1>
+    <h1>   PARKFinder Driving Directions -Florida National Parks </h1>
     
     
     <!--  CSS STARTS HERE ! -->
@@ -24,7 +24,7 @@
       #floating-panel {
         position: absolute;
         top: 10px;
-        left: 25%;
+        left: 55%;
         z-index: 5;
         background-color: #fff;
         padding: 5px;
@@ -40,7 +40,9 @@
         text-align: center;
       }
       h1{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: orangered;}
+    color: orangered;
+   
+    text-align: left;}
     </style>
 
     <!-- END OF CSS --> 
@@ -50,48 +52,66 @@
   <body>
     <div id="floating-panel">
     <b>Start: </b>
+
+<!-- STARTING Location Set For Orlando Florida --> 
+
     <select id="start">
-      <option value="penn station, new york, ny">Oralndo Floirda</option>
+      <option value="orlando, fl">Orlando ,Floirda</option>
     
     </select>
     <b>End: </b>
     <select id="end">
+
+
+<!-- Start of drop down and location data of Florida National Parks --> 
+
         <!--  Big Cypress Park Number 1 -->
-      <option value="260 Broadway New York NY 10007">Big Cypress
+      <option value="52105 Tamiami Trail East,
+      Ochopee, Florida ">Big Cypress
         Ochopee, FL</option>
+
         <!-- Biscayne Park 2 -->
-      <option value="W 49th St & 5th Ave, New York, NY 10020">Biscayne
+      <option value="9700 SW 328th Street, Sir Lancelot Jones Way, Homestead, Florida">Biscayne
         Miami, Key Biscayne and Homestead, FL</option>
-        <!-- Park 3 Canaveral -->
-      <option value="moma, New York, NY">Canaveral
-        Titusville and New Smyrna Beach, FL</option>
+
+
+        <!-- Canaveral Park number 3-->
+      <option value="S Washington Ave, Titusville, Florida">Canaveral
+        Titusville </option>
+
          <!-- Park 4 Castillo de San Marcos -->
-      <option value="350 5th Ave, New York, NY, 10118">Castillo de San Marcos
+      <option value=" 1 S Castillo Dr, St. Augustine, Florida">Castillo de San Marcos
         St. Augustine, FL</option>
+
          <!-- Park 5 De Soto  -->
-      <option value="253 West 125th Street, New York, NY">De Soto
+      <option value=": 8300 Desoto Memorial Hwy, Bradenton, Florida ">De Soto
         Bradenton, FL</option>
-         <!-- Park  Canaveral -->
+
+         
+
             <!-- Park 6 Dry Tortugas  -->
-      <option value="253 West 125th Street, New York, NY">Dry Tortugas
+      <option value="40001 SR-9336 
+      Homestead, Florida">Dry Tortugas
             Key West, FL</option>
+
+
                <!-- Park 7 Everglades -->
-      <option value="253 West 125th Street, New York, NY">Everglades
-            Miami, Naples, and Homestead, FL</option>
-               <!-- Park 8 De Soto  -->
-      <option value="253 West 125th Street, New York, NY">
+      <option value="36000 SW 8th Street
+      Miami, Florida">Everglades
+            National Park</option>
+
+               <!-- Park 9 Timucan Preserve  -->
+      <option value="12713 Ft Caroline Rd, Jacksonville, Florida">
             Fort Caroline the Timucuan Preserve; Jacksonville, FL</option>
 
-            <!-- Park 9 Fort Matanzas -->
-            <option value="253 West 125th Street, New York, NY">
+            <!-- Park 10 Fort Matanzas -->
+            <option value="8635 A1A S, St. Augustine, FL">
                    Fort Matanzas St. Augustine, FL, FL</option>
 
-                   <option value="253 West 125th Street, New York, NY">
-                        Fort Matanzas St. Augustine, FL, FL</option>
 
 
        <!-- Park 11 Gulf Islands -->
-      <option value="1 Wall St, New York, NY">Gulf Islands
+      <option value="1801 Gulf Breeze Pkwy, Gulf Breeze, FL 32563">Gulf Islands
             Gulf Breeze, Florida</option>
        <!-- END OF DATA input -->
 
@@ -148,7 +168,8 @@
         directionsService.route({
           origin: document.getElementById('start').value,
           destination: document.getElementById('end').value,
-          travelMode: 'DRIVING'
+// Set Form of Travel to Driving //
+   travelMode: 'DRIVING'
         }, function(response, status) {
           // Route the directions and pass the response to a function to create
           // markers for each step.
