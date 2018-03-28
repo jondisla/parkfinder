@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions for Park Finder Web Based App</title>
+    
+    
+    <h1>   PARKFinder Driving Directions -Florida National Parks </h1>
+    
+    
+    <!--  CSS STARTS HERE ! -->
+    <style>
+      
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 55%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #warnings-panel {
+        width: 100%;
+        height:10%;
+        text-align: center;
+      }
+      h1{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: orangered;
+   
+    text-align: left;}
+    </style>
+
+    <!-- END OF CSS --> 
+
+    
+  </head>
+  <body>
+    <div id="floating-panel">
+    <b>Start: </b>
+
+<!-- STARTING Location Set For Orlando Florida --> 
+
+    <select id="start">
+      <option value="orlando, fl">Orlando ,Floirda</option>
+    
+    </select>
+    <b>End: </b>
+    <select id="end">
+
+
+<!-- Start of drop down and location data of Florida National Parks --> 
+
+        <!--  Big Cypress Park Number 1 -->
+      <option value="52105 Tamiami Trail East,
+      Ochopee, Florida ">Big Cypress
+        Ochopee, FL</option>
+
+        <!-- Biscayne Park 2 -->
+      <option value="9700 SW 328th Street, Sir Lancelot Jones Way, Homestead, Florida">Biscayne
+        Miami, Key Biscayne and Homestead, FL</option>
+
+
+        <!-- Canaveral Park number 3-->
+      <option value="S Washington Ave, Titusville, Florida">Canaveral
+        Titusville </option>
+
+         <!-- Park 4 Castillo de San Marcos -->
+      <option value=" 1 S Castillo Dr, St. Augustine, Florida">Castillo de San Marcos
+        St. Augustine, FL</option>
+
+         <!-- Park 5 De Soto  -->
+      <option value=": 8300 Desoto Memorial Hwy, Bradenton, Florida ">De Soto
+        Bradenton, FL</option>
+
+         
+
+            <!-- Park 6 Dry Tortugas  -->
+      <option value="40001 SR-9336 
+      Homestead, Florida">Dry Tortugas
+            Key West, FL</option>
+
+
+               <!-- Park 7 Everglades -->
+      <option value="36000 SW 8th Street
+      Miami, Florida">Everglades
+            National Park</option>
+
+               <!-- Park 9 Timucan Preserve  -->
+      <option value="12713 Ft Caroline Rd, Jacksonville, Florida">
+            Fort Caroline the Timucuan Preserve; Jacksonville, FL</option>
+
+            <!-- Park 10 Fort Matanzas -->
+            <option value="8635 A1A S, St. Augustine, FL">
+                   Fort Matanzas St. Augustine, FL, FL</option>
+
+
+
+       <!-- Park 11 Gulf Islands -->
+      <option value="1801 Gulf Breeze Pkwy, Gulf Breeze, FL 32563">Gulf Islands
+            Gulf Breeze, Florida</option>
+       <!-- END OF DATA input -->
+
+
+    </select>
+    </div>
+    <div id="map"></div>
+    &nbsp;
+    <div id="warnings-panel"></div>
+
+<!-- START OF JAVA SCRIPT FOR PARK FINDER --> 
+
+
+    <script>
+      function initMap() {
+        var markerArray = [];
+
+        // Instantiate a directions service.
+        var directionsService = new google.maps.DirectionsService;
+
+        // Create a map and center it on Manhattan.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 28.5383, lng: 81.3792}
+        });  
+ 
+        // Create a renderer for directions and bind it to the map.
+        var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+
+        // Instantiate an info window to hold step text.
+        var stepDisplay = new google.maps.InfoWindow;
+
+        // Display the route between the initial start and end selections.
+        calculateAndDisplayRoute(
+            directionsDisplay, directionsService, markerArray, stepDisplay, map);
+        // Listen to change events from the start and end lists.
+        var onChangeHandler = function() {
+          calculateAndDisplayRoute(
+              directionsDisplay, directionsService, markerArray, stepDisplay, map);
+        };
+        document.getElementById('start').addEventListener('change', onChangeHandler);
+        document.getElementById('end').addEventListener('change', onChangeHandler);
+      }
+
+      function calculateAndDisplayRoute(directionsDisplay, directionsService,
+          markerArray, stepDisplay, map) {
+        // First, remove any existing markers from the map.
+        for (var i = 0; i < markerArray.length; i++) {
+          markerArray[i].setMap(null);
+        }
+
+      
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+// Set Form of Travel to Driving //
+   travelMode: 'DRIVING'
+        }, function(response, status) {
+          // Route the directions and pass the response to a function to create
+          // markers for each step.
+          if (status === 'OK') {
+            document.getElementById('warnings-panel').innerHTML =
+                '<b>' + response.routes[0].warnings + '</b>';
+            directionsDisplay.setDirections(response);
+            showSteps(response, markerArray, stepDisplay, map);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function showSteps(directionResult, markerArray, stepDisplay, map) {
+        // For each step, place a marker, and add the text to the marker's infowindow.
+        // Also attach the marker to an array so we can keep track of it and remove it
+        // when calculating new routes.
+        var myRoute = directionResult.routes[0].legs[0];
+        for (var i = 0; i < myRoute.steps.length; i++) {
+          var marker = markerArray[i] = markerArray[i] || new google.maps.Marker;
+          marker.setMap(map);
+          marker.setPosition(myRoute.steps[i].start_location);
+          attachInstructionText(
+              stepDisplay, marker, myRoute.steps[i].instructions, map);
+        }
+      }
+
+      function attachInstructionText(stepDisplay, marker, text, map) {
+        google.maps.event.addListener(marker, 'click', function() {
+          // Open an info window when the marker is clicked on, containing the text
+          // of the step.
+          stepDisplay.setContent(text);
+          stepDisplay.open(map, marker);
+        });
+      }
+
+      // VERY IMPORTant Api key Do not cut off this script ! 
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx3-mFMUFzBhnVEk_0iyqj19vK0_1Jvmo&callback=initMap">
+    </script>
+  </body>
+</html>
