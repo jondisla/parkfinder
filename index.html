@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ParkFinder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+</head>
+<body>
+
+    <div class="container main">
+        <div class="background-image"></div>
+
+        <div class="title">
+            <img class="responsive-img" src="assets/images/park-finder-logo.png"/>
+        </div>
+         <!-- Search -->
+         <section class="search-content">
+                <form id="parks-form">
+                    <input type="text" id="parks-input"  placeholder="Search Parks" />
+                    <input id="search-parks" type="submit" value="Search" >
+                    <a id="all-parks" href="index.html"> See all parks. </a>
+                </form>
+        </section>
+    </div>
+
+     <!-- Parks Content -->
+    <div class="park-content">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo center"><img class="logo-image" src="assets/images/park-finder-logo.png" width="250px;" /></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                </ul>
+        </nav>
+        
+        <div class="container z-depth-1 park">
+            <h1> National Parks </h1>
+            <section id="parks-page">
+                <div class="card small">
+                    <a href="content.html"><div class="card-image">
+                        <img id="park-image" src="assets/images/test2.png">
+                        <span id="park-name" class="card-title">Dry Tortugas</span>
+                    </div></a>
+                    <div id="park-description" class="card-content">
+                        <p>Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands...</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="content.html">More +</a>
+                        <a id="temperature"><i class=" right tooltipped material-icons" data-position="bottom" data-tooltip="30 ºF"class="material-icons right">filter_drama</i></a>            
+                    </div>
+                </div>
+
+            </section>
+            <section id="favorites-page">
+                <div class="card small">
+                    <div class="card-image">
+                        <img id="park-image" src="assets/images/test3.png">
+                        <span id="park-name" class="card-title">Dry Tortugas</span>
+                    </div>
+                    <div id="park-description" class="card-content">
+                        <p>Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands...</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">More +</a>
+                        <a href="#"><i class="material-icons right">filter_drama</i></a>            
+                    </div>
+                </div>
+            </section>
+            <section id="favorites-page">
+                <div class="card small">
+                    <div class="card-image">
+                        <img id="park-image" src="assets/images/test1.png">
+                        <span id="park-name" class="card-title">Dry Tortugas</span>
+                    </div>
+                    <div id="park-description" class="card-content">
+                        <p>Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands...</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">More +</a>
+                        <a href="#"><i class="material-icons right">filter_drama</i></a>            
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="center-align">
+        <p class="copy"> &copy; Copyright Park Finder - 2018. All Rights Reserved.</p>
+    </footer> 
+
+    
+
+
+
+
+
+
+
+
+<!-- Javacript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="assets/javascript/app.js"></script>
+
+</body>
+</html>
