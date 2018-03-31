@@ -1,7 +1,4 @@
 $(document).ready(function(){
-    console.log('ready')
-
-
     // Init Tooltip
     $('.tooltipped').tooltip();
 
@@ -25,13 +22,8 @@ $(document).ready(function(){
 });
 
 
+
 //GOOGLE API GOES HERE//
-
-
-
-
-
-
 
 
 

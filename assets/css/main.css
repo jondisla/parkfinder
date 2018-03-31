@@ -1,3 +1,96 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+        /* Front Page  */
+.background-image {
+    background-image: url("../../assets/images/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    z-index: -1;  
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.title {
+    text-align: center;
+    padding-top: 40px;
+    width: 100%
+}
+.title img{
+    width: 700px;
+}
+#parks-form {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#parks-form input{
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 18px;
+}
+/* Search Box */
+#parks-input {
+    border-radius: 6rem;
+    border: 4px solid #4E2D12;
+    padding: 10px;
+    transition: .5s;
+    width: 30%;
+}
+#parks-input:focus{
+    border-color: #72842D;
+    transition: .5s;
+}
+::placeholder {
+    color:#fff;
+    opacity: 1;
+}
+/* Search Button */
+.search-content a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#search-parks {
+    background: #4E2D12;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: #fff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 5px solid  rgb(52, 25, 25);
+	text-shadow: 0px -2px  rgb(52, 25, 25);
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+#search-parks:active{
+	transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+        /* Footer */
+footer {
+    width: 100%;
+    background-color: rgba(138, 148, 148, 0.50);
+    position: fixed;
+    bottom: 0;
+    display: inline;
 /*////////////INDEX FRONTAGE CSS//////////////*/
 *{
   box-sizing: border-box;
@@ -90,10 +183,67 @@ footer {
   position: fixed;
   bottom: 0;
   display: inline;
-
 }
 
+            /* Parks Content */
+.park {
+    padding: 0px 60px 15px 60px;
+    background-color: #fff;
+    margin-bottom: 100px;
+}
+.park h1 {
+    color:#4E2D12;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 50px;
+}
+.nav-wrapper {
+    background-color: #6d6b6b;
+}
+.logo-image {
+    padding-top: 5px;
+}
+.cloud a i {
+    padding-left: 20px; 
+    font-size: 30px;
+    color: #eceff1;
 
+}
+/* #temperature {
+    margin:0;
+    font-size: 16px;
+    color: #eceff1;
+
+} */
+.nav-wrapper ul li a {
+    color: #cfd8dc;
+    font-size: 16px;
+    margin-right: 20px
+}
+         /* ABOUT  */
+.about-us {
+    width: 100%;
+    text-align: center
+}
+.about-us p{
+    margin: 10px 50px;
+}
+.group  h1{
+    margin-bottom: 80px;
+}
+/* Group Profile Photos */
+.us {
+    float:left;
+    width: 48%;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.us img{
+    width: 250px;
+}
+.us img:hover {
+    -moz-transform: scale(1.1);
           /* Parks Content */
 .park {
   padding: 0px 60px 15px 60px;
@@ -160,15 +310,16 @@ transform: scale(1.1);
 
 }
 .us p {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 /* Forms */
 
 
 .btn-submit {
-  text-align: center;
+    text-align: center;
 }
+  
 .btn-submit input {
 background: #4E2D12;
 padding: 10px 25px;
@@ -185,6 +336,46 @@ transform: translate(0px,5px);
 border-bottom: 1px solid;
 }
 
+        /* Content Page */
+.content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+}
+.park-title {
+    width: 100%;
+    text-align: center;
+    color:#4E2D12;
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+#get-directions{
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+.heart a{
+    background-color: #9E9E9E;
+    margin-top: 40px;
+}
+.heart a:hover {
+    background: #F07F75;
+}
+        /* Grey Box Informations */
+.content-information {
+    background: #BEBAB9;
+    padding-top: 20px;   
+    margin-top: 50px; 
+}
+h5 {
+    margin: 0;
+}
+
+.weather span, p {
+   color: #000 !important
+}
       /* Content Page */
 .content {
   margin-top: 30px;
