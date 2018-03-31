@@ -31,6 +31,16 @@ body {
 .title img{
     width: 700px;
 }
+/* Park Finder Nav Logo */
+.logo-desktop img{
+    width: 250px;
+    display: block;
+}
+.logo-mobile img {
+    display: none;
+    width: 35px;
+    padding-top: 3px;
+}
 #parks-form {
     text-align: center;
     margin-top: 100px;
@@ -226,6 +236,38 @@ h5 {
 
 .weather span, p {
    color: #000 !important
+}
+
+/* Media Queries */
+@media (max-width: 992px){
+    footer {
+        position: static;
+    }
+    .dropdown-trigger i {
+        padding-right: 45px;
+    }
+    .dropdown-content {
+        background-color:#6d6b6b;
+    }
+}
+
+@media (max-width: 640px) {
+
+    #parks-form input{
+        font-size: 13px;
+        padding: 10px;
+    
+    }
+    .logo-desktop img{
+        display: none;
+    }
+    .logo-mobile img{
+        display:block;
+        margin: 0 auto;
+    }
+    #parks-input {
+        padding: 0 !important; 
+    }
 }
 
 

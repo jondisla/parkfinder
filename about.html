@@ -13,15 +13,23 @@
 </head>
 <body>
      <!-- About Content -->
-    <nav>
-        <div class="nav-wrapper" id="about">
-            <a href="index.html" class="brand-logo center"><img class="logo-image" src="assets/images/park-finder-logo.png" width="250px;" /></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+     <nav>
+        <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo logo-desktop center"><img src="assets/images/park-finder-logo.png"></a>
+                <a href="index.html" class="brand-logo logo-mobile center"><img src="assets/images/park-finder-leaf.png" /></a>
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
             </ul>
-    </nav>
+            <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
+            <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+         </div>
+     </nav>
 
     <div class="container z-depth-1 park">
         <div class="about-us">
@@ -91,5 +99,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script src="assets/javascript/app.js"></script>
+
 </body>
 </html>
