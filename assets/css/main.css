@@ -102,7 +102,10 @@ footer {
     position: fixed;
     bottom: 0;
     display: inline;
-
+}
+/*////////////INDEX FRONTAGE CSS//////////////*/
+*{
+  box-sizing: border-box;
 }
 
 
@@ -165,12 +168,12 @@ footer {
 }
 .us img:hover {
     -moz-transform: scale(1.1);
--webkit-transform: scale(1.1);
--o-transform: scale(1.1);
--ms-transform: scale(1.1);
-transform: scale(1.1);
-
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
+
 .us p {
     font-size: 20px;
 }
