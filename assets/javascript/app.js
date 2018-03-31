@@ -1,5 +1,4 @@
 $(document).ready(function(){
- 
     // Init Tooltip
     $('.tooltipped').tooltip();
 
@@ -21,6 +20,16 @@ $(document).ready(function(){
             scrollTop: $(".parks-content").offset().top},
             'slow');
 });
+
+
+
+//GOOGLE API GOES HERE//
+
+
+
+
+
+
 
 
 });
