@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+
+    // These are the Park IDs
+
+    var parkID = ['drto', 'casa', 'bicy', 'bisc', 'cana', 'deso', 'ever', 'timu', 'foma', 'guis']
+      // For Loop then loops through our park ID list...
+      for (var i = 0; i < parkID.length; i++);
+
+
+    // This is our API key
+    var APIKey = "&api_key=EDBeZOIgUpZ6soM0x0qAzkKbaBVDiZiYJBGgMkkm";
+
+
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkID + APIKey;
+
+    
+    // Here we run our AJAX call to the NPS API
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function(response) {
+
+    // Log the queryURL
+    console.log(queryURL);
+
+    // Log the resulting object (all parks)
+
+    // Big Cyprus
+    console.log(response.data["0"]);
+
+    // Biscayne
+    console.log(response.data["1"]);
+
+    // Canaveral
+    console.log(response.data["2"]);
+
+    // Castillo
+    console.log(response.data["3"]);
+
+    // De Soto
+    console.log(response.data["4"]);
+
+    // Dry Tortugas
+    console.log(response.data["5"]);
+
+    // Everglades
+    console.log(response.data["6"]);
+
+    // Fort Matanzas
+    console.log(response.data["7"]);
+
+    // Gulf Islands
+    console.log(response.data["8"]);
+
+    // Timucuan
+    console.log(response.data["9"]);
+    });
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            
+</body>
+</html>
