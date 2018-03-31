@@ -18,8 +18,15 @@
     <div class="content-park">
         <nav>
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo center"><img class="logo-image" src="assets/images/park-finder-logo.png" width="250px;" /></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <a href="index.html" class="brand-logo logo-desktop center"><img src="assets/images/park-finder-logo.png"></a>
+                <a href="index.html" class="brand-logo logo-mobile center"><img src="assets/images/park-finder-leaf.png" /></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                </ul>
+                <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
+                <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
@@ -32,12 +39,12 @@
     <div class="container content z-depth-1">
             <div class="row content-page" >
                 <h2 id="park-name" class="park-title col s12">Dry Tortuga</h2>
-                <div class="col s7 main-content center-align">
+                <div class="col m7 col s12 main-content center-align">
                     <img id="park-image" class="responsive-img" src="assets/images/test2.png" />
                     <p id="park-description">Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands.  Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life,  and the vast assortment of bird life that frequent the area.</p>
             </div>
             <!-- Side Bar -->
-            <div class="col s5">
+            <div class="col m5 col s12">
                 <div class="google-directions">
                     <div id="google-input">
                         <a><img  src="assets/images/google.png"class="responsive-img"/></a>
@@ -55,7 +62,7 @@
         </div>
             <!-- Bottom Information -->
         <div class="row content-information  z-depth-2">
-            <div class="col s4 hours  center-align ">
+            <div class="col m4 col s12 hours  center-align ">
                 <i class="material-icons">date_range</i>
                 <div class="hours">
                     <h5> Park Hours</h5>
@@ -64,7 +71,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col s4 address center-align  ">
+            <div class="col m4 col s12 address center-align  ">
                 <i class="material-icons">directions_car</i>
                 <div>
                     <h5> Address</h5>
@@ -72,10 +79,10 @@
                             Homestead, FL 33034</p>
                 </div>
             </div>
-            <div class="col s4 weather center-align  ">
+            <div class="col m4 col s12  weather center-align  ">
                 <i class="material-icons ">wb_sunny</i>
                 <div class="weather">
-                    <h5> Weather</h5>
+                    <h5 id="weather-name"> Weather</h5>
                     <div id="nav-mobile weather">
                             <p><span id="temperature">30 </span>ºF</p>
                        </div>
