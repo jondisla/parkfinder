@@ -33,27 +33,18 @@
     <div class="park-content">
         <nav>
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo logo-desktop center"><img src="assets/images/park-finder-logo.png"></a>
-                <a href="index.html" class="brand-logo logo-mobile center"><img src="assets/images/park-finder-leaf.png" /></a>
-                <ul class="right hide-on-med-and-down">
+                <a href="index.html" class="brand-logo center"><img class="logo-image" src="assets/images/park-finder-logo.png" width="250px;" /></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
                 </ul>
-                <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
-                <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </ul>
-            </div>
         </nav>
         
         <div class="container z-depth-1 park">
             <h1> National Parks </h1>
-            <!-- Main one -->
             <section id="parks-page">
-                <div class="card small hoverable">
+                <div class="card small">
                     <a href="content.html"><div class="card-image">
                         <img id="park-image" src="assets/images/test2.png">
                         <span id="park-name" class="card-title">Dry Tortugas</span>
@@ -63,7 +54,7 @@
                     </div>
                     <div class="card-action">
                         <a href="content.html">More +</a>
-                        <a id="temperature"><i class=" right tooltipped material-icons" data-position="bottom" data-tooltip=""class="material-icons right">filter_drama</i></a>            
+                        <a id="temperature"><i class=" right tooltipped material-icons" data-position="bottom" data-tooltip="30 ºF"class="material-icons right">filter_drama</i></a>            
                     </div>
                 </div>
 
@@ -118,6 +109,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script src="assets/javascript/app.js"></script>
-
 </body>
 </html>
