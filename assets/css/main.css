@@ -103,10 +103,6 @@ footer {
     bottom: 0;
     display: inline;
 }
-/*////////////INDEX FRONTAGE CSS//////////////*/
-*{
-  box-sizing: border-box;
-}
 
 
             /* Parks Content */
@@ -272,10 +268,6 @@ h5 {
         padding: 0 !important; 
     }
 }
-
-
-
-
 
 
 /*////////////////////////GOOGLE API STYLES////////////////////////*/
