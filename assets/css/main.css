@@ -111,10 +111,6 @@ footer {
     bottom: 0;
     display: inline;
 }
-/*////////////INDEX FRONTAGE CSS//////////////*/
-*{
-  box-sizing: border-box;
-}
 
 
             /* Parks Content */
@@ -180,10 +176,6 @@ footer {
     -o-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-<<<<<<< HEAD
-
-=======
->>>>>>> 0159d684711546b21ea32ee4ae509a76d87d41b3
 }
 
 .us p {
@@ -291,8 +283,6 @@ h5 {
         margin-top: 0;
     }
 }
-
-
 
 
 
