@@ -26,6 +26,25 @@ $(document).ready(function(){
             'slow');
 });
 
+//Log in testing//
+//hide the form
+  $('#login-page').hide();
+
+  //grab the id and change form to sign in form
+
+  $('#login').click(function(event){
+    event.preventDefault();
+    $('#parks-form').hide()
+    $('#login-page').show();
+  })
+
+  //Revert back to search on cancel
+
+  $('#cancel').click(function(){
+    $('#login-page').hide();
+    $('#parks-form').show();
+  })
+
 // Weather API //
     // This is our API key
     var APIKey = "2e2abb20095913cfcde631825a6e337d";
@@ -91,7 +110,8 @@ function contactScript(value) {
       });
       var c = $("#name").val(),
           d = $("#email").val(),
-          f = { name: c, email: d};
+          e = $('#message').val(),
+          f = { name: c, email: d, e: message};
       return b.push(f).then(function(a) { 
           $(".sucess").css("display", "block"), 
           $(".sucess-none").css("display", "none") }), !1 })   

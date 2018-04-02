@@ -41,6 +41,39 @@ body {
     width: 35px;
     padding-top: 3px;
 }
+
+/*////LOGIN///*/
+
+#login {
+    background: #456354;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #fff;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 5px solid  rgb(7, 31, 15);
+	text-shadow: 0px -2px  rgb(7,31,15);
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+#login:active{
+	transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+.waves-effect{
+    background:#456354;
+}
+
+#bottom-text{
+    color: #4F311A;
+}
+
+/*////park form///*/
+
 #parks-form {
     text-align: center;
     margin-top: 100px;
@@ -93,7 +126,13 @@ body {
 #search-parks:active{
 	transform: translate(0px,5px);
     -webkit-transform: translate(0px,5px);
-	border-bottom: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#all-parks{
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+
 }
         /* Footer */
 footer {
