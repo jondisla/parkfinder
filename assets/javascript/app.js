@@ -12,18 +12,6 @@ $(document).ready(function(){
    });
 
    
-        
-    $('.park-content').css({
-    display: 'none'
-    });
-
-    $("#search-parks, #all-parks").click(function() {
-    event.preventDefault()
-        $(".main").hide();
-        $(".park-content").show()
-        $('html,body').animate({
-            scrollTop: $(".parks-content").offset().top},
-            'slow');
 });
 
 // Weather API //
