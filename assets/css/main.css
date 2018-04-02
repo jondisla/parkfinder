@@ -1,5 +1,12 @@
+/* Index Front Page */
 
-/*////////////INDEX FRONTAGE CSS//////////////*/
+/*Arrumar google directions adicionando A tag pra virar link*/
+/* Arrumar o style do google maps */
+/*Arrumar footer the Main Page*/
+/*Criar Dropdown Main Page*/
+/*Ligar todos os API's */
+/*Local Storage Favorites Page*/
+
 
 *{
     box-sizing: border-box;
@@ -35,6 +42,7 @@ body {
 .logo-desktop img{
     width: 250px;
     display: block;
+    padding-top: 5px;
 }
 .logo-mobile img {
     display: none;
@@ -66,12 +74,12 @@ body {
     transition: .5s;
 }
 ::placeholder {
-    color:#fff;
+    color:#000;
     opacity: 1;
 }
 /* Search Button */
 .search-content a {
-    color: #000;
+    color: #fff;
     font-size: 14px;
     text-decoration: underline;
     cursor: pointer;
@@ -199,7 +207,7 @@ border-bottom: 1px solid;
         /* Content Page */
 .content {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     padding: 20px;
     background-color: #fff;
 }
@@ -267,7 +275,15 @@ h5 {
     #parks-input {
         padding: 0 !important; 
     }
+    .content-page p {
+        margin-bottom: 40px;
+   
+    }
+    .heart a{
+        margin-top: 0;
+    }
 }
+
 
 
 /*////////////////////////GOOGLE API STYLES////////////////////////*/
