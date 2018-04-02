@@ -27,7 +27,69 @@ $(document).ready(function(){
 });
 
 //Log in testing//
-//hide the form
+var config = {
+  apiKey: "AIzaSyAKclrngrWoi9mPYbc821PlWrljn22nrAI",
+  authDomain: "parkfinderauth.firebaseapp.com",
+  databaseURL: "https://parkfinderauth.firebaseio.com",
+  projectId: "parkfinderauth",
+  storageBucket: "parkfinderauth.appspot.com",
+  messagingSenderId: "132724982492"
+};
+firebase.initializeApp(config);
+
+//Get ID elements
+var txtEmail = $('#email');
+var txtPassword = $('#password');
+var btnLogin = $('#btnLogin')
+var btnCancelbtn = $('#cancel')
+var btnRegister = $('#register')
+var btnLogout = $('#navLogout')
+var btnLogin = $('#navLogin')
+
+//Add login event
+btnLogin.click(function(){
+  //   //get email and password
+  var email = txtEmail.val();
+  var password = txtPassword.val();
+  var auth = firebase.auth();
+      //sign in
+  var promise = auth.signInWithEmailAndPassword(email, password);
+  promise.catch(event => console.log(event.message))
+  })
+
+  btnRegister.click(function(event){
+  //get email and password
+  var email = txtEmail.val();
+  var password = txtPassword.val();
+  var auth = firebase.auth();
+      //sign in
+  var promise = auth.createUserWithEmailAndPassword(email, password);
+  promise.catch(event => console.log(event.message));
+  });
+
+  //log out
+
+  btnLogout.click(function(event) {
+    firebase.auth().signOut();
+    btnLogout.hide()
+  })
+
+  btnLogin.click(function() {
+    console.log('clicked')
+    $('.park-content').hide();
+    $('#login-page').show();
+  })
+  //change state when user is registered
+  firebase.auth().onAuthStateChanged(firebaseUser=> {
+    if (firebaseUser) {
+      console.log('User Created')
+      btnLogout.removeAttr( 'style' );
+    }else{
+      console.log('Unable to Register');
+      btnLogout.attr("css", { display: "none" });
+    }
+  })
+// hide the form
   $('#login-page').hide();
 
   //grab the id and change form to sign in form

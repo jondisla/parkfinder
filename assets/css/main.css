@@ -174,11 +174,19 @@ footer {
     color: #eceff1;
 
 } */
+
+.nav-wrapper ul{
+    margin-right: 30px;
+}
+
 .nav-wrapper ul li a {
     color: #cfd8dc;
     font-size: 16px;
-    margin-right: 20px
+    margin-right: 20px;
 }
+
+
+
          /* ABOUT  */
 .about-us {
     width: 100%;

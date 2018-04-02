@@ -51,27 +51,27 @@
                     <label for="password">Password</label>
                   </div>
                 </div>
-                <div class="row">          
+                <!-- <div class="row">          
                   <div class="input-field col s12 m12 l12  login-text">
                       <input type="checkbox" id="remember-me" />
                       <label for="remember-me">Remember me</label>
                   </div>
-                </div>
+                </div> -->
                 <div class="row">
                   <div class="input-field col s12">
-                    <a href="#" class="btn waves-effect waves-light col s12">Login</a>
+                    <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
                   </div>
                   <div class="input-field col s12">
-                    <div id="cancel" class="btn waves-effect waves-light col s12">Cancel</div>
+                    <div id="cancel" class="btn waves-effect waves-light col s12" required>Cancel</div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s6 m6 l6">
-                    <p class="margin medium-small"><a id="bottom-text" href="#">Register Now!</a></p>
+                    <p class="margin medium-small"><div id="register">Register Now!</div></p>
                   </div>
-                  <div class="input-field col s6 m6 l6">
+                  <!-- <div class="input-field col s6 m6 l6">
                       <p class="margin right-align medium-small"><a id="bottom-text" href="#">Forgot password?</a></p>
-                  </div>          
+                  </div>           -->
                 </div>
         
               </form>
@@ -90,12 +90,16 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
+                    <li id="navLogout" style="display:none;cursor:pointer">Logout</li>
+                    <li id="navLogin" style="cursor:pointer">Login</li>
                 </ul>
                 <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
                 <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
+                    <li id="navLogout" style="display:none;cursor:pointer">Logout</li>
+                    <li id="navLogin" style="cursor:pointer">Logout</li>
                 </ul>
             </div>
         </nav>
@@ -154,20 +158,13 @@
 
     <footer class="center-align">
         <p class="copy"> &copy; Copyright Park Finder - 2018. All Rights Reserved.</p>
-    </footer> 
-
-    
-
-
-
-
-
-
-
-
+    </footer>
 <!-- Javacript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="assets/javascript/app.js"></script>
 
 </body>
