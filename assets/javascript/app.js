@@ -47,7 +47,6 @@ $(document).ready(function(){
       });
 
 
-});
 
 //GOOGLE API GOES HERE//
 
