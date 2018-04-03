@@ -26,6 +26,10 @@ $(document).ready(function(){
           'slow');
 });
 
+//modal
+
+  $('.modal').modal();
+
 //Log in testing//
 var config = {
   apiKey: "AIzaSyAKclrngrWoi9mPYbc821PlWrljn22nrAI",
@@ -44,25 +48,30 @@ var btnLogin = $('#btnLogin')
 var btnCancelbtn = $('#cancel')
 var btnRegister = $('#register')
 var btnLogout = $('#navLogout')
-var btnLogin = $('#navLogin')
+var btnNavLogin = $('#navLogin')
 
 //Add login event
 btnLogin.click(function(){
-  //   //get email and password
+
+//get email and password
   var email = txtEmail.val();
   var password = txtPassword.val();
   var auth = firebase.auth();
-      //sign in
+
+//sign in
   var promise = auth.signInWithEmailAndPassword(email, password);
   promise.catch(event => console.log(event.message))
+  location.replace("https://jondisla.github.io/parkfinder/parks.html")
   })
 
   btnRegister.click(function(event){
+
   //get email and password
   var email = txtEmail.val();
   var password = txtPassword.val();
   var auth = firebase.auth();
-      //sign in
+
+  //sign in
   var promise = auth.createUserWithEmailAndPassword(email, password);
   promise.catch(event => console.log(event.message));
   });
@@ -74,50 +83,35 @@ btnLogin.click(function(){
     btnLogout.hide()
   })
 
-  btnLogin.click(function() {
-    console.log('clicked')
-    $('.park-content').hide();
-    $('#login-page').show();
-  })
+
   //change state when user is registered
   firebase.auth().onAuthStateChanged(firebaseUser=> {
     if (firebaseUser) {
       console.log('User Created')
-      btnLogout.removeAttr( 'style' );
+      btnLogout.show();
+      btnNavLogin.hide();
+      btnLogin.hide();
     }else{
       console.log('Unable to Register');
-      btnLogout.attr("css", { display: "none" });
+      btnLogout.hide();
+      btnNavLogin.show();
+      btnLogin.show()
     }
   })
+
 // hide the form
   $('#login-page').hide();
 
 //log out
-
 btnLogout.click(function(event) {
   firebase.auth().signOut();
   btnLogout.hide()
 })
 
-btnLogin.click(function() {
-  console.log('clicked')
-  $('.park-content').hide();
-  $('#login-page').show();
-})
-//change state when user is registered
-firebase.auth().onAuthStateChanged(firebaseUser=> {
-  if (firebaseUser) {
-    console.log('User Created')
-    btnLogout.removeAttr( 'style' );
-    btnLogin.attr("css", { display: "none" });
-    
-  }else{
-    console.log('Unable to Register');
-    btnLogout.attr("css", { display: "none" });
-  }
-})
-// hide the form
-$('#login-page').hide();
+btnNavLogin.click(function() {
+  console.log('got it')
+  $('.modal').modal();
+});
 
 //grab the id and change form to sign in form
 
@@ -130,7 +124,7 @@ $('#login').click(function(event){
 //Revert back to search on cancel
 
 $('#cancel').click(function(){
-  $('#login-page').hide();
+  $('#modal1').hide();
   $('#parks-form').show();
 })
 
@@ -204,7 +198,7 @@ var b = firebase.database().ref("Messages");
     return b.push(f).then(function(a) { 
         $(".sucess").css("display", "block"), 
         $(".sucess-none").css("display", "none") }), !1 })   
-}
-
+  }
+  
 
 });

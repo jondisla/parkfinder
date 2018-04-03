@@ -12,73 +12,65 @@
 
 </head>
 <body>
-
     <div class="container main">
         <div class="background-image"></div>
-
+        <li id="navLogout" style="display:none;cursor:pointer;position:absolute;right:0;">Logout</li>
+        <a class="modal-trigger" href="#modal1"><li id="navLogin" style="cursor:pointer;position:absolute;right:0;">Login</a></li>
+        <!-- <p id="logstatus" style="position:absolute; right:0;">LOGSTATUS</p> -->
         <div class="title">
             <img class="responsive-img" src="assets/images/park-finder-logo.png"/>
         </div>
+        
          <!-- Search -->
          <section class="search-content">
                 <form id="parks-form">
                     <input type="text" id="parks-input" placeholder="Search Parks" />
                     <input id="search-parks" type="button" onclick="location.href='parks.html';"  value="Search" >
-                    <a id="all-parks" href="parks.html"> See all parks. </a>
+                    <!-- Modal Structure -->
+                <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Have an Account?</a> -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                            
+                            <div class="col s3"></div>
+                            
+                            <div class="col s6 z-depth-6 card-panel">
+                                    <h6>Sign in</h6>
+                                <form class="login-form" id="login-page">
+                                <div class="row">
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                    <input class="validate" id="email" type="email">
+                                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                    <input id="password" type="password">
+                                    <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                    <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
+                                </div>
+                                <div class="row">
+                                        <div class="input-field col s12 m12 l12">
+                                        <center><p class="margin medium-small"><div id="register" style="cursor:pointer;">Register Now!</div></p></center>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Register Now</a>
+                    </div> -->
+                </div>
+            </div>
+                    <center><a id="all-parks" href="parks.html"> See all parks. </a></center>
                 </form>
         </section>
-        
-        <!--login form-->
-
-        <div id="login-page" class="row">
-            <div class="col s3"></div>
-            <div class="col s6 z-depth-6 card-panel">
-              <form class="login-form">
-                <div class="row">
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">mail_outline</i>
-                    <input class="validate" id="email" type="email">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">lock_outline</i>
-                    <input id="password" type="password">
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-                <!-- <div class="row">          
-                  <div class="input-field col s12 m12 l12  login-text">
-                      <input type="checkbox" id="remember-me" />
-                      <label for="remember-me">Remember me</label>
-                  </div>
-                </div> -->
-                <div class="row">
-                  <div class="input-field col s12">
-                    <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
-                  </div>
-                  <div class="input-field col s12">
-                    <div id="cancel" class="btn waves-effect waves-light col s12" required>Cancel</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s6 m6 l6">
-                    <p class="margin medium-small"><div id="register">Register Now!</div></p>
-                  </div>
-                  <!-- <div class="input-field col s6 m6 l6">
-                      <p class="margin right-align medium-small"><a id="bottom-text" href="#">Forgot password?</a></p>
-                  </div>           -->
-                </div>
-        
-              </form>
-            </div>
-        </div>
-    
     </div>
-
      <!-- Parks Content -->
     <div class="park-content">
         <nav>

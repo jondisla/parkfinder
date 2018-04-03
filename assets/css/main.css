@@ -140,7 +140,23 @@ body {
 #all-parks{
     color:rgb(255, 255, 255);
     font-size: 20px;
+}
 
+#navLogin{
+    color: white;
+    list-style: none;
+    font-size: 25px;
+    top: 0;
+    background: green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 5px solid  rgb(36, 75, 44);
+    border-radius: 8px;
+}
+
+#navLogin a{
+    color: white;
+    text-decoration: none;
 }
         /* Footer */
 footer {
