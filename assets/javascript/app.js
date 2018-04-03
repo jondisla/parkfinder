@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
         var parkBlock = `
           <div class="card small hoverable">
               <a href="content.html?parkCode=${ parkCode }"><div class="card-image">
-                  <img id="park-image" src="assets/images/test2.png">
+                  <img id="park-image" src="">
                   <span id="park-name" class="card-title">${fullName}</span>
               </div></a>
               <div id="park-description" class="card-content">
@@ -54,6 +54,7 @@ jQuery(document).ready(function($){
         `;
         // Building the parks.html/ ES6
         $('#parks-page').append(parkBlock); //Append the whole block
+        $('#park-image').attr('src', [parkCode].mainImage);
         
       
         var dropdownContent = `<li><a href="content.html?parkCode=${ parkCode}">${fullName}</a></li>`;
