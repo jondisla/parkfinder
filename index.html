@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>ParkFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Font Awesome Icon Font-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
@@ -21,20 +21,33 @@
         </div>
          <!-- Search -->
          <section class="search-content">
-                <form id="parks-form">
-                    <input type="text" id="parks-input" placeholder="Search Parks" />
-                    <input id="search-parks" type="button" onclick="location.href='parks.html';"  value="Search" >
-                    <a id="all-parks" href="parks.html"> See all parks. </a>
-                </form>
+             <div class="dropdown-main">
+                
+                <!-- Dropdown Trigger -->
+                  <a class='dropdown-trigger btn' id="search-parks" href='#' data-target='parks-list'>Search Parks</a>
+                
+                  <!-- Dropdown Structure -->
+                  <ul id='parks-list' class='dropdown-content parks-list-content'>
+                  </ul>
+                
+                <a id="all-parks" href="parks.html"> See all parks. </a>
+            
+            </div>
+       
+                
         </section>
     </div>
-
 
     <footer class="center-align">
         <p class="copy"> &copy; Copyright Park Finder - 2018. All Rights Reserved.</p>
     </footer> 
 
     
+
+
+
+
+
 
 
 

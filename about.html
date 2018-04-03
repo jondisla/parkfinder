@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>ParkFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Font Awesome Icon Font-->
+     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
@@ -22,7 +22,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
             </ul>
-            <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
+            <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only fas fa-bars menubar right"></i></a></li>
             <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -34,8 +34,7 @@
     <div class="container z-depth-1 park">
         <div class="about-us">
             <h1>About </h1>
-            <p> Thank you for using Park Finder!  This project could not have been possible without the collaboration of the Park Finder team.  We hope this service provides a seemeless and great experience for everyone wanting to enjoy the outdoors.  A special thank you to all the team members for their hard work and dedication in bringing this work about.</p>
-            <p>Now get out there, explore, discover and enjoy nature!</p>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit pariatur non, sequi fugit, quibusdam provident ut eveniet soluta voluptas modi, officia enim temporibus est! Optio voluptate, similique pariatur et repellendus nihil omnis tenetur dolorem sequi sed nobis aliquid commodi reprehenderit!</p>
         </div>
         <div class="group">
             <h1> Meet the Group </h1>
@@ -60,27 +59,27 @@
         <div class="contact">
             <h1> Contact Us </h1>
             <div class="row contact-form">
-                <form id="newContact" >
+                <form>
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="name" type="text" class="validate" required>
+                            <i class="far fa-user prefix"></i>
+                            <input id="icon_prefix" type="text" class="validate" required>
                             <label for="icon_prefix">First Name</label>
                         </div>
                         <div class="input-field col s8 offset-s2">
-                            <i class="material-icons prefix">email</i>
+                            <i class="far fa-envelope prefix"></i>
                             <input id="email" type="email" class="validate" required >
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field col s8 offset-s2">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="message" class="materialize-textarea" required></textarea>
+                            <i class="far fa-edit prefix"></i>
+                            <textarea id="textarea1" class="materialize-textarea" required></textarea>
                             <label for="textarea1">Message</label>
                         </div>
                         <div class="input-field col s12 btn-submit">
-                             <input id="submitContact" type="submit" value="Submit">
-                             <center><div id="submitMessage"></p></div>
+                             <input type="submit" value="Submit">
                         </div>
+                       
                     </div>
                 </form>
             </div>
@@ -99,7 +98,6 @@
 <!-- Javacript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="assets/javascript/app.js"></script>
 
 </body>
