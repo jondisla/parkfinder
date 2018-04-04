@@ -177,15 +177,15 @@ body {
 /* Menu Bar nav  */
 .menubar {
     font-size: 22px;
-    margin-right: 40px;
     margin-top: 15px;
+    margin-right: 40px;
     color: #cfd8dc;
 }
 
 .nav-wrapper ul li a {
     color: #cfd8dc;
     font-size: 16px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 
@@ -230,7 +230,7 @@ body {
 .btn-submit {
     text-align: center;
 }
-.btn-submit inpu54t {
+.btn-submit input {
 background: #4E2D12;
 padding: 10px 25px;
 border-radius: 10px;

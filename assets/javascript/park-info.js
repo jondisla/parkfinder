@@ -10,7 +10,7 @@ var parkInfo = {
         phone: "(904) 829-6506",
         address: "1 South Castillo Drive Saint Augustine, FL 32084",
         hours: " 8:00 am - 6:00 pm",
-        googleImage: "assets/images/mainImage/drytortugasPin.png",
+        googleImage: "assets/images/mainImage/castilloPin.png",
         mainImage: "assets/images/mainImage/castillo.jpg"
         
     },
