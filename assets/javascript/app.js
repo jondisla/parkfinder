@@ -12,16 +12,16 @@ jQuery(document).ready(function($){
  
     // Init Tooltip
     $(".dropdown-trigger").dropdown();
- 
-      
+    
+    
 
-    // When button clicked save on favorites
-   $(".heart").click(function(){
-    M.toast({html: 'Park Saved!', classes:'rounded'});
-   });
+  // When button clicked save on favorites
+ $(".heart").click(function(){
+  M.toast({html: 'Park Saved!', classes:'rounded'});
+});
 
 
-    // Here we run our AJAX call to the NPS API
+// Here we run our AJAX call to the NPS API
     // This AJAX is getting the array Parks_IDs
     $.ajax({
       url: Parks_queryURL + '&parkCode=' + Parks_IDs,
@@ -106,20 +106,133 @@ jQuery(document).ready(function($){
       
     } 
     
+    
 
+
+//modal
+
+  $('.modal').modal();
+
+//Log in testing//
+var config = {
+  apiKey: "AIzaSyAKclrngrWoi9mPYbc821PlWrljn22nrAI",
+  authDomain: "parkfinderauth.firebaseapp.com",
+  databaseURL: "https://parkfinderauth.firebaseio.com",
+  projectId: "parkfinderauth",
+  storageBucket: "parkfinderauth.appspot.com",
+  messagingSenderId: "132724982492"
+};
+firebase.initializeApp(config);
+
+//Get ID elements
+var txtEmail = $('#email');
+var txtPassword = $('#password');
+var btnLogin = $('#btnLogin')
+var btnCancelbtn = $('#cancel')
+var btnRegister = $('#register')
+var btnLogout = $('#indexLogout')
+var btnindexLogin = $('#indexLogin')
+var navLogout = $('#navLogout')
+var navLogin = $('#navLogin')
+
+//Add login event
+btnLogin.click(function(){
+
+//get email and password
+  var email = txtEmail.val();
+  var password = txtPassword.val();
+  var auth = firebase.auth();
+
+//sign in
+  var promise = auth.signInWithEmailAndPassword(email, password);
+  promise.catch(event => console.log(event.message))
+  
+  })
+
+  btnRegister.click(function(event){
+
+  //get email and password
+  var email = txtEmail.val();
+  var password = txtPassword.val();
+  var auth = firebase.auth();
+
+  //sign in
+  var promise = auth.createUserWithEmailAndPassword(email, password);
+  promise.catch(event => console.log(event.message));
+  });
+
+  //log out buttons
+
+  btnLogout.click(function(event) {
+    firebase.auth().signOut();
+    btnLogout.hide()
+    location.replace("https://jondisla.github.io/parkfinder")
+    $('#logmessage').show();
+  })
+
+  navLogout.click(function(){
+    location.replace("https://jondisla.github.io/parkfinder")
+    $('#logmessage').show();
+  })
+  
+  navLogout.click(function(event) {
+    firebase.auth().signOut();
+    location.replace("https://jondisla.github.io/parkfinder")
+    btnLogout.hide()
+  })
+
+  $('#dropLogout').click(function(event) {
+    firebase.auth().signOut();
+    location.replace("https://jondisla.github.io/parkfinder")
+    $('#dropLogout').hide()
+  })
+  //change state when user is registered
+
+  firebase.auth().onAuthStateChanged(firebaseUser=> {
+    if (firebaseUser) {
+      
+      btnLogin.click(function(){
+        console.log('User Logged in')
+        // $('#modal1').html('User Logged in')
+      })
+      btnLogout.show();
+      navLogout.show()
+      $('#dropLogout').show();
+      btnindexLogin.hide();
+      navLogin.hide();
+      $('#dropLogin').hide();
+    }else{
+      console.log('Logged out');
+      btnLogout.hide();
+      navLogout.hide();
+      $('#dropLogout').hide();
+      btnindexLogin.show();
+      navLogin.show()
+      $('#dropLogin').show();
+    }
+  })
+
+
+btnindexLogin.click(function() {
+  $('.modal').modal();
 });
 
+navLogin.click(function() {
+  $('.modal').modal();
+});
+
+
+    //GOOGLE API GOES HERE//
+
+
+
+
+    //Contact page firebase//
+
+
+
+
 //Open Weather, Add photos on park-info.js, google directions, add favorites and also append on Favorites.html and local storage, Fix logo on desktop 
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,4 +279,7 @@ jQuery(document).ready(function($){
 
 
 
+
+});
+  
 

@@ -12,48 +12,84 @@
 
 </head>
 <body>
-
     <div class="container main">
-        <div class="background-image"></div>
 
+        <!--top LOGIN button-->
+
+        <div class="background-image"></div>
+        <li id="indexLogout" style="cursor:pointer;position:absolute;right:0;">Logout</li>
+        <a class="modal-trigger" href="#modal1"><li id="indexLogin" style="cursor:pointer;position:absolute;right:0;">Login</a></li>
         <div class="title">
             <img class="responsive-img" src="assets/images/park-finder-logo.png"/>
         </div>
+        
          <!-- Search -->
-         <section class="search-content">
-             <div class="dropdown-main">
-                
-                <!-- Dropdown Trigger -->
-                  <a class='dropdown-trigger btn' id="search-parks" href='#' data-target='parks-list'>Search Parks</a>
-                
-                  <!-- Dropdown Structure -->
-                  <ul id='parks-list' class='dropdown-content parks-list-content'>
-                  </ul>
-                
-                <a id="all-parks" href="parks.html"> See all parks. </a>
-            
-            </div>
-       
-                
-        </section>
-    </div>
 
+         <section class="search-content">
+                <div class="dropdown-main">
+                
+                    <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger btn' id="search-parks" href='#' data-target='parks-list'>Search Parks</a>
+                    
+                        <!-- Dropdown Structure -->
+                        <ul id='parks-list' class='dropdown-content parks-list-content'>
+                        </ul>
+                    
+                    <a id="all-parks" href="parks.html"> See all parks. </a>
+                    <div id="logmessage" style="color:red;display:none;">You are logged out</div>
+                </div>
+
+                <!--LOGIN Modal-->
+
+                <form id="parks-form">
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                            
+                        <div class="col s3"></div>
+                        
+                        <div class="col s6 z-depth-6 card-panel">
+                                <h6>Sign in</h6>
+                            <form class="login-form" id="login-page">
+                            <div class="row">
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input class="validate" id="email" type="email">
+                                <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input id="password" type="password">
+                                <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
+                            </div>
+                            <div class="row">
+                                    <div class="input-field col s12 m12 l12">
+                                    <center><p class="margin medium-small"><div id="register" style="cursor:pointer;">Register Now!</div></p></center>
+                                    </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form> 
+    </section>
+    </div>
     <footer class="center-align">
         <p class="copy"> &copy; Copyright Park Finder - 2018. All Rights Reserved.</p>
     </footer> 
-
-    
-
-
-
-
-
-
-
-
 <!-- Javacript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="assets/javascript/app.js"></script>
 
 </body>

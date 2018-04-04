@@ -21,13 +21,19 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
+                <li id="navLogin"><a href="https://jondisla.github.io/parkfinder">Login</a>
+                </li>
+                <li id="navLogout"><a href="https://jondisla.github.io/parkfinder">Logout</a></li>
             </ul>
             <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only fas fa-bars menubar right"></i></a></li>
-            <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-            </ul>
+                <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li id="dropLogin"><a href="https://jondisla.github.io/parkfinder">Login</a>
+                    </li>
+                    <li id="dropLogout"><a href="https://jondisla.github.io/parkfinder">Logout</a></li>
+                </ul>
          </div>
      </nav>
 
@@ -73,11 +79,11 @@
                         </div>
                         <div class="input-field col s8 offset-s2">
                             <i class="far fa-edit prefix"></i>
-                            <textarea id="textarea1" class="materialize-textarea" required></textarea>
+                            <textarea id="message" class="materialize-textarea" required></textarea>
                             <label for="textarea1">Message</label>
                         </div>
                         <div class="input-field col s12 btn-submit">
-                             <input type="submit" value="Submit">
+                             <input id="newContact" type="submit" value="Submit">
                         </div>
                        
                     </div>
@@ -93,11 +99,15 @@
     </footer> 
 
     
+    
 
 
 <!-- Javacript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="assets/javascript/app.js"></script>
 
 </body>
