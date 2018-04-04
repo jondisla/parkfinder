@@ -8,30 +8,6 @@
 </head>
 <body>
 
-<div class="container">  
-  
-  <h1>National Parks</h1>
-  <section id="park-info"></section>
-  <br>
-  <section id="park-info1"></section>
-  <br>
-  <section id="park-info2"></section>
-  <br>
-  <section id="park-info3"></section>
-  <br>
-  <section id="park-info4"></section>
-  <br>
-  <section id="park-info5"></section>
-  <br>
-  <section id="park-info6"></section>
-  <br>
-  <section id="park-info7"></section>
-  <br>
-  <section id="park-info8"></section>
-  <br>
-  <section id="park-info9"></section>
-</div>
-
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <script type="text/javascript">
@@ -60,181 +36,40 @@
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
 
-      // Big Cyprus
-      $('#park-info').append(response.data["0"].description);
-      $('#park-info').append(response.data["0"].directionsInfo);
-      $('#park-info').append(response.data["0"].directionsUrl);
-      $('#park-info').append(response.data["0"].fullName);
-      $('#park-info').append(response.data["0"].url);
-      $('#park-info').append(response.data["0"].weatherInfo);
-
-      // Biscayne
-      $('#park-info1').append(response.data["1"].description);
-      $('#park-info1').append(response.data["1"].directionsInfo);
-      $('#park-info1').append(response.data["1"].directionsUrl);
-      $('#park-info1').append(response.data["1"].fullName);
-      $('#park-info1').append(response.data["1"].url);
-      $('#park-info1').append(response.data["1"].weatherInfo);
-
-      // Canaveral
-      $('#park-info2').append(response.data["2"].description);
-      $('#park-info2').append(response.data["2"].directionsInfo);
-      $('#park-info2').append(response.data["2"].directionsUrl);
-      $('#park-info2').append(response.data["2"].fullName);
-      $('#park-info2').append(response.data["2"].url);
-      $('#park-info2').append(response.data["2"].weatherInfo);
-
-      // Castillo
-      $('#park-info3').append(response.data["3"].description);
-      $('#park-info3').append(response.data["3"].directionsInfo);
-      $('#park-info3').append(response.data["3"].directionsUrl);
-      $('#park-info3').append(response.data["3"].fullName);
-      $('#park-info3').append(response.data["3"].url);
-      $('#park-info3').append(response.data["3"].weatherInfo);
-
-      // De Soto
-      $('#park-info4').append(response.data["4"].description);
-      $('#park-info4').append(response.data["4"].directionsInfo);
-      $('#park-info4').append(response.data["4"].directionsUrl);
-      $('#park-info4').append(response.data["4"].fullName);
-      $('#park-info4').append(response.data["4"].url);
-      $('#park-info4').append(response.data["4"].weatherInfo);
-
-      // Dry Torugas
-      $('#park-info5').append(response.data["5"].description);
-      $('#park-info5').append(response.data["5"].directionsInfo);
-      $('#park-info5').append(response.data["5"].directionsUrl);
-      $('#park-info5').append(response.data["5"].fullName);
-      $('#park-info5').append(response.data["5"].url);
-      $('#park-info5').append(response.data["5"].weatherInfo);
-
-      // Everglades
-      $('#park-info6').append(response.data["6"].description);
-      $('#park-info6').append(response.data["6"].directionsInfo);
-      $('#park-info6').append(response.data["6"].directionsUrl);
-      $('#park-info6').append(response.data["6"].fullName);
-      $('#park-info6').append(response.data["6"].url);
-      $('#park-info6').append(response.data["6"].weatherInfo);
-
-      // Fort Matanzas
-      $('#park-info7').append(response.data["7"].description);
-      $('#park-info7').append(response.data["7"].directionsInfo);
-      $('#park-info7').append(response.data["7"].directionsUrl);
-      $('#park-info7').append(response.data["7"].fullName);
-      $('#park-info7').append(response.data["7"].url);
-      $('#park-info7').append(response.data["7"].weatherInfo);
-
-      // Gulf Islands
-      $('#park-info8').append(response.data["8"].description);
-      $('#park-info8').append(response.data["8"].directionsInfo);
-      $('#park-info8').append(response.data["8"].directionsUrl);
-      $('#park-info8').append(response.data["8"].fullName);
-      $('#park-info8').append(response.data["8"].url);
-      $('#park-info8').append(response.data["8"].weatherInfo);
-
-      // Timicuan
-      $('#park-info9').append(response.data["9"].description);
-      $('#park-info9').append(response.data["9"].directionsInfo);
-      $('#park-info9').append(response.data["9"].directionsUrl);
-      $('#park-info9').append(response.data["9"].fullName);
-      $('#park-info9').append(response.data["9"].url);
-      $('#park-info9').append(response.data["9"].weatherInfo);
-
     // Log the queryURL
     console.log(queryURL);
 
-    // Log the resulting object (all parks) 
+    // Log the resulting object (all parks)
 
     // Big Cyprus
     console.log(response.data["0"]);
-    console.log(response.data["0"].description);
-    console.log(response.data["0"].directionsInfo);
-    console.log(response.data["0"].directionsUrl);
-    console.log(response.data["0"].fullName);
-    console.log(response.data["0"].url);
-    console.log(response.data["0"].weatherInfo);
 
     // Biscayne
     console.log(response.data["1"]);
-    console.log(response.data["1"].description);
-    console.log(response.data["1"].directionsInfo);
-    console.log(response.data["1"].directionsUrl);
-    console.log(response.data["1"].fullName);
-    console.log(response.data["1"].url);
-    console.log(response.data["1"].weatherInfo);
 
     // Canaveral
     console.log(response.data["2"]);
-    console.log(response.data["2"].description);
-    console.log(response.data["2"].directionsInfo);
-    console.log(response.data["2"].directionsUrl);
-    console.log(response.data["2"].fullName);
-    console.log(response.data["2"].url);
-    console.log(response.data["2"].weatherInfo);
 
     // Castillo
     console.log(response.data["3"]);
-    console.log(response.data["3"].description);
-    console.log(response.data["3"].directionsInfo);
-    console.log(response.data["3"].directionsUrl);
-    console.log(response.data["3"].fullName);
-    console.log(response.data["3"].url);
-    console.log(response.data["3"].weatherInfo);
 
     // De Soto
     console.log(response.data["4"]);
-    console.log(response.data["4"].description);
-    console.log(response.data["4"].directionsInfo);
-    console.log(response.data["4"].directionsUrl);
-    console.log(response.data["4"].fullName);
-    console.log(response.data["4"].url);
-    console.log(response.data["4"].weatherInfo);
 
     // Dry Tortugas
     console.log(response.data["5"]);
-    console.log(response.data["5"].description);
-    console.log(response.data["5"].directionsInfo);
-    console.log(response.data["5"].directionsUrl);
-    console.log(response.data["5"].fullName);
-    console.log(response.data["5"].url);
-    console.log(response.data["5"].weatherInfo);
 
     // Everglades
     console.log(response.data["6"]);
-    console.log(response.data["6"].description);
-    console.log(response.data["6"].directionsInfo);
-    console.log(response.data["6"].directionsUrl);
-    console.log(response.data["6"].fullName);
-    console.log(response.data["6"].url);
-    console.log(response.data["6"].weatherInfo);
 
     // Fort Matanzas
     console.log(response.data["7"]);
-    console.log(response.data["7"].description);
-    console.log(response.data["7"].directionsInfo);
-    console.log(response.data["7"].directionsUrl);
-    console.log(response.data["7"].fullName);
-    console.log(response.data["7"].url);
-    console.log(response.data["7"].weatherInfo);
 
     // Gulf Islands
     console.log(response.data["8"]);
-    console.log(response.data["8"].description);
-    console.log(response.data["8"].directionsInfo);
-    console.log(response.data["8"].directionsUrl);
-    console.log(response.data["8"].fullName);
-    console.log(response.data["8"].url);
-    console.log(response.data["8"].weatherInfo);
 
     // Timucuan
     console.log(response.data["9"]);
-    console.log(response.data["9"].description);
-    console.log(response.data["9"].directionsInfo);
-    console.log(response.data["9"].directionsUrl);
-    console.log(response.data["9"].fullName);
-    console.log(response.data["9"].url);
-    console.log(response.data["9"].weatherInfo);
-
     });
 
     </script>

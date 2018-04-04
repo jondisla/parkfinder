@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <title>ParkFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Font Awesome Icon Font-->
+     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
@@ -24,24 +24,31 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
+                    <li id="navLogin"><a class="modal-trigger" href="#modal1">Login</a>
+                    </li>
+                    <li id="navLogout"><a >Logout</a></li>
                 </ul>
-                <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only material-icons right">menu</i></a></li>
+                <a class="dropdown-trigger" data-target="dropdown1"><i class="hide-on-large-only fas fa-bars menubar right"></i></a></li>
                 <ul id="dropdown1" class="right dropdown-content right hide-on-large-only">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="favorites.html">Favorites</a></li>
+                    <li id="dropLogin"><a class="modal-trigger" href="#modal1">Login</a>
+                    </li>
+                    <li id="dropLogout"><a >Logout</a></li>
                 </ul>
             </div>
         </nav>
         
         
             <!-- Main Content -->
+        <div id="park-content"> </div>
     <div class="container content z-depth-1">
             <div class="row content-page" >
-                <h2 id="park-name" class="park-title col s12">Dry Tortuga</h2>
+                <h2 id="park-name" class="park-title col s12"></h2>
                 <div class="col m7 col s12 main-content center-align">
                     <img id="park-image" class="responsive-img" src="assets/images/test2.png" />
-                    <p id="park-description">Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. The 100-square mile park is mostly open water with seven small islands.  Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life,  and the vast assortment of bird life that frequent the area.</p>
+                    <p id="park-description"></p>
             </div>
             <!-- Side Bar -->
             <div class="col m5 col s12">
@@ -55,7 +62,11 @@
 
         <!-- Favorites -->
             <div id="save-fav" class="heart center-align">
-                    <a class="btn-floating btn-large"  ><i class="large tooltipped material-icons" data-position="bottom" data-tooltip="Save on Favorites">favorite</i></a>
+                    <a class="btn-floating btn-large"  ><i class="large tooltipped fas fa-heart" data-position="bottom" data-tooltip="Save on Favorites"></i></a>
+            </div>
+            <div class="phone">
+                <i class="fas fa-phone"></i>
+                <p id="phone-input"></p>
             </div>
     
 
@@ -63,38 +74,78 @@
             <!-- Bottom Information -->
         <div class="row content-information  z-depth-2">
             <div class="col m4 col s12 hours  center-align ">
-                <i class="material-icons">date_range</i>
+                <i class="far fa-calendar-alt"></i>
                 <div class="hours">
                     <h5> Park Hours</h5>
-                    <p id="hours-input">Mon-Fri: 8am-5pm
-                        Sat-Sun:9am-6pm
+                    <p id="hours-input">
                     </p>
                 </div>
             </div>
             <div class="col m4 col s12 address center-align  ">
-                <i class="material-icons">directions_car</i>
+                <i class="fas fa-car"></i>
                 <div>
                     <h5> Address</h5>
-                    <p id="address-input">40001 SR-9336 
-                            Homestead, FL 33034</p>
+                    <p id="address-input"></p>
                 </div>
             </div>
             <div class="col m4 col s12  weather center-align  ">
-                <i class="material-icons ">wb_sunny</i>
+                <i class="far fa-sun"></i>
                 <div class="weather">
                     <h5 id="weather-name"> Weather</h5>
                     <div id="nav-mobile weather">
-                            <p><span id="temperature">30 </span>ºF</p>
+                            <p><span id="temperature"> </span></p>
                        </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <input type="hidden" id="PAGE_NAME" value="park_detail" />
 
     <footer class="center-align">
         <p class="copy"> &copy; Copyright Park Finder - 2018. All Rights Reserved.</p>
     </footer> 
 
+    <!--LOGIN Modal-->
+
+    <form id="parks-form">
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                    
+                <div class="col s3"></div>
+                
+                <div class="col s6 z-depth-6 card-panel">
+                        <h6>Sign in</h6>
+                    <form class="login-form" id="login-page">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <input class="validate" id="email" type="email">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <input id="password" type="password">
+                        <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
+                    </div>
+                    <div class="row">
+                            <div class="input-field col s12 m12 l12">
+                            <center><p class="margin medium-small"><div id="register" style="cursor:pointer;">Register Now!</div></p></center>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</form> 
     
 
 
@@ -105,7 +156,11 @@
 <!-- Javacript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script type="text/javascript" src="assets/javascript/park-info.js"></script> <!-- Park info JS/ Additional information (phone/address...) -->
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 </html>
