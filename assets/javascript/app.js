@@ -240,7 +240,7 @@ navLogin.click(function() {
 
 
 
-<<<<<<< HEAD
+
 
 
 // // Weather API //
@@ -263,7 +263,7 @@ navLogin.click(function() {
        // Transfer content to HTML
         $("#weather-name").html(response.name);
        // $(".wind").text("Wind Speed: " + response.wind.speed);
-=======
+
 // Weather API //
     // This is our API key
     var APIKey = "2e2abb20095913cfcde631825a6e337d";
@@ -284,7 +284,7 @@ navLogin.click(function() {
         // Transfer content to HTML
         $("#weather-name").html(response.name);
         // $(".wind").text("Wind Speed: " + response.wind.speed);
->>>>>>> 8af6b785b1ce583d88c4c68684706738f43ce428
+
         // $(".humidity").text("Humidity: " + response.main.humidity);
         $("#temperature").text("Temperature: " + response.main.temp);
         // $(".min-temp").text("Temperature (F) " + response.main.min-temp);
@@ -293,15 +293,13 @@ navLogin.click(function() {
        
         // Log the data in the console as well
         console.log("Wind Speed: " + response.wind.speed);
-<<<<<<< HEAD
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature: " + response.main.temp);
     });
-=======
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature: " + response.main.temp);
       });
->>>>>>> 8af6b785b1ce583d88c4c68684706738f43ce428
+
 
 
 
