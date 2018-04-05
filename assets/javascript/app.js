@@ -293,20 +293,20 @@ if ($('#newContact').length > 0 ) {
 //         console.log(queryURL);
 //         // Log the resulting object
 //         console.log(response);
-//         // Transfer content to HTML
-//         $("#weather-name").html(response.name);
-//         // $(".wind").text("Wind Speed: " + response.wind.speed);
-//         // $(".humidity").text("Humidity: " + response.main.humidity);
-//         $("#temperature").text("Temperature: " + response.main.temp);
-//         // $(".min-temp").text("Temperature (F) " + response.main.min-temp);
-//         // $(".max-temp").text("Temperature (F) " + response.main.temp);
+       // Transfer content to HTML
+        $("#weather-name").html(response.name);
+       // $(".wind").text("Wind Speed: " + response.wind.speed);
+        // $(".humidity").text("Humidity: " + response.main.humidity);
+        $("#temperature").text("Temperature: " + response.main.temp);
+        // $(".min-temp").text("Temperature (F) " + response.main.min-temp);
+        // $(".max-temp").text("Temperature (F) " + response.main.temp);
        
        
-//         // Log the data in the console as well
-//         console.log("Wind Speed: " + response.wind.speed);
-//         console.log("Humidity: " + response.main.humidity);
-//         console.log("Temperature: " + response.main.temp);
-//       });
+        // Log the data in the console as well
+        console.log("Wind Speed: " + response.wind.speed);
+      console.log("Humidity: " + response.main.humidity);
+      console.log("Temperature: " + response.main.temp);
+    });
 
 
 
