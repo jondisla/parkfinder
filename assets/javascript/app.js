@@ -228,54 +228,14 @@ navLogin.click(function() {
   $('.modal').modal();
 });
 
-
-//Contact page firebase//
-
-
-// if ($('#newContact').length > 0 ) {
-//   contactScript('forcontact');
-//   }
   
-//   //firebase
-//   function contactScript(value) {
-//   var a = {
-//   apiKey: "AIzaSyDR72NQLjCvgSFslE3ZiZVgTfgNUZAVEc4",
-//   authDomain: "contactform-2e332.firebaseapp.com",
-//   databaseURL: "https://contactform-2e332.firebaseio.com",
-//   projectId: "contactform-2e332",
-//   storageBucket: "contactform-2e332.appspot.com",
-//   messagingSenderId: "937912320174"
-//   };
-//   firebase.initializeApp(a);
   
-//   var b = firebase.database().ref("Messages");
-//   $("#newContact").submit(function(a) { $(this), $('#submitMessage').text("Thanks for contacting us!");
-//   $('#submitMessage').css({
-//   color:'green',
-//   fontSize:'30px'
-//   });
-//   var c = $("#name").val(),
-//   d = $("#email").val(),
-//   e = $('#message').val(),
-//   f = { name: c, email: d, e: message};
-//   return b.push(f).then(function(a) {
-//   $(".sucess").css("display", "block"),
-//   $(".sucess-none").css("display", "none") }), !1 })
-//   }
-  
-
-
     //GOOGLE API GOES HERE//
 
 
 
-
-    //Contact page firebase//
-
-
-
-
 //Open Weather, Add photos on park-info.js, google directions, add favorites and also append on Favorites.html and local storage 
+
 
 
 
