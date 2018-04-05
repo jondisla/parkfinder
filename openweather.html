@@ -31,19 +31,8 @@
   <script type="text/javascript">
     // This is our API key
     var APIKey = "2e2abb20095913cfcde631825a6e337d";
-
-    var locationLoop = ["q=Key West,Florida","q=Saint Augustine,Florida","q=okeechobee,Florida","q=Biscayne,Florida","q=Biscayne,Florida","q=Titusville,Florida","q=Bradenton,Florida","q=Jacksonville,Florida","q=Saint Augustine,Florida","q=Gulf Breeze,Florida",];  
-
-
-var i;
-for (var i = 0; i < locationLoop.length; i++) { 
-  
-
-    
-
-
     // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + locationLoop+ "&units=imperial&appid="+ APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=Orlando,Florida&units=imperial&appid=" + APIKey;
     // Here we run our AJAX call to the OpenWeatherMap API
     $.ajax({
       url: queryURL,
@@ -68,9 +57,7 @@ for (var i = 0; i < locationLoop.length; i++) {
         console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature (F): " + response.main.temp);
-      });}
-
-
+      });
   </script>
 </body>
 
