@@ -202,9 +202,6 @@ body {
     margin-bottom: 80px;
 }
 /* Group Profile Photos */
-.about-page {
-    margin-top: 30px;
-}
 .us {
     float:left;
     width: 48%;
@@ -324,8 +321,8 @@ footer {
     .dropdown-trigger i {
         padding-right: 45px;
     }
-    #indexLogin {
-        font-size: 20px;
+    .dropdown-content {
+        background-color:#6d6b6b;
     }
 }
 
@@ -350,9 +347,6 @@ footer {
     }
     .heart a{
         margin-top: 0;
-    }
-    #indexLogin {
-        font-size: 14px;
     }
 }
    
