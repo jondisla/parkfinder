@@ -35,12 +35,15 @@ jQuery(document).ready(function($){
       for(var i = 0; i < park.length; i++) {
         var fullName = park[i].fullName; //Getting the Park Name 
         var description = park[i].description; // Getting Park Description
+        var moreInfo = parkInfo;// parkInfo var is coming from park-info.js file / All information are on other file 
         var parkCode = park[i].parkCode; //Getting Park Code to use on next AJAX/ Park Code separates each park (ex.casa, bicy) from the array
+        var images = moreInfo[parkCode].mainImage;
+      
   
         var parkBlock = `
           <div class="card small hoverable">
               <a href="content.html?parkCode=${ parkCode }"><div class="card-image">
-                  <img id="park-image" src="">
+                  <img id="park-image" src="${images}">
                   <span id="park-name" class="card-title">${fullName}</span>
               </div></a>
               <div id="park-description" class="card-content">
@@ -48,16 +51,18 @@ jQuery(document).ready(function($){
               </div>
               <div class="card-action">
                   <a href="content.html?parkCode=${ parkCode }">More +</a>
-                 <a id="temperature" class="right">[NO TEMP] ºF</a>    
+                 <a id="temperature" class="right"> ºF</a>    
               </div>
           </div>
         `;
         // Building the parks.html/ ES6
         $('#parks-page').append(parkBlock); //Append the whole block
-        $('#park-image').attr('src', [parkCode].mainImage);
+  
         
       
-        var dropdownContent = `<li><a href="content.html?parkCode=${ parkCode}">${fullName}</a></li>`;
+        var dropdownContent = `<li><a href="content.html?parkCode=${parkCode}">${fullName}</a></li>`; //Dropdown on main Page / shows the Name of the parks in <li> tag
+
+
         $('#parks-list').append(dropdownContent);
         
       } //Building the dropwdown on the index.html/ Also directing to correct page when the park is chose
@@ -81,7 +86,8 @@ jQuery(document).ready(function($){
       })
       .then(function(res){
         var park = res.data[0]; 
-        var moreInfo = parkInfo; // parkInfo var is coming from park-info.js file / All information are on other file 
+        var moreInfo = parkInfo;// parkInfo var is coming from park-info.js file / All information are on other file 
+      
         
         
         
@@ -102,13 +108,14 @@ jQuery(document).ready(function($){
         
         
       });
-    
-      
     } 
     
     
 
 
+$('#favorites').hide()
+  
+  
 //modal
 
   $('.modal').modal();
@@ -191,11 +198,8 @@ btnLogin.click(function(){
 
   firebase.auth().onAuthStateChanged(firebaseUser=> {
     if (firebaseUser) {
-      
-      btnLogin.click(function(){
-        console.log('User Logged in')
-        // $('#modal1').html('User Logged in')
-      })
+      console.log('User Logged in')
+      $('#modal1').html('User Logged in')
       btnLogout.show();
       navLogout.show()
       $('#dropLogout').show();
@@ -224,56 +228,19 @@ navLogin.click(function() {
   $('.modal').modal();
 });
 
-
-//Contact page firebase//
-
-
-if ($('#newContact').length > 0 ) {
-  contactScript('forcontact');
-  }
   
-  //firebase
-  function contactScript(value) {
-  var a = {
-  apiKey: "AIzaSyDR72NQLjCvgSFslE3ZiZVgTfgNUZAVEc4",
-  authDomain: "contactform-2e332.firebaseapp.com",
-  databaseURL: "https://contactform-2e332.firebaseio.com",
-  projectId: "contactform-2e332",
-  storageBucket: "contactform-2e332.appspot.com",
-  messagingSenderId: "937912320174"
-  };
-  firebase.initializeApp(a);
   
-  var b = firebase.database().ref("Messages");
-  $("#newContact").submit(function(a) { $(this), $('#submitMessage').text("Thanks for contacting us!");
-  $('#submitMessage').css({
-  color:'green',
-  fontSize:'30px'
-  });
-  var c = $("#name").val(),
-  d = $("#email").val(),
-  e = $('#message').val(),
-  f = { name: c, email: d, e: message};
-  return b.push(f).then(function(a) {
-  $(".sucess").css("display", "block"),
-  $(".sucess-none").css("display", "none") }), !1 })
-  }
-  
-
-
     //GOOGLE API GOES HERE//
 
 
 
-
-    //Contact page firebase//
-
+//Open Weather, Add photos on park-info.js, google directions, add favorites and also append on Favorites.html and local storage 
 
 
 
-//Open Weather, Add photos on park-info.js, google directions, add favorites and also append on Favorites.html and local storage, Fix logo on desktop 
 
 
+<<<<<<< HEAD
 
 
 // // Weather API //
@@ -296,6 +263,28 @@ if ($('#newContact').length > 0 ) {
        // Transfer content to HTML
         $("#weather-name").html(response.name);
        // $(".wind").text("Wind Speed: " + response.wind.speed);
+=======
+// Weather API //
+    // This is our API key
+    var APIKey = "2e2abb20095913cfcde631825a6e337d";
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+      "q=Orlando,Florida&units=imperial&appid=" + APIKey;
+    // Here we run our AJAX call to the OpenWeatherMap API
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      // We store all of the retrieved data inside of an object called "response"
+      .then(function(response) {
+        // Log the queryURL
+        console.log(queryURL);
+        // Log the resulting object
+        console.log(response);
+        // Transfer content to HTML
+        $("#weather-name").html(response.name);
+        // $(".wind").text("Wind Speed: " + response.wind.speed);
+>>>>>>> 8af6b785b1ce583d88c4c68684706738f43ce428
         // $(".humidity").text("Humidity: " + response.main.humidity);
         $("#temperature").text("Temperature: " + response.main.temp);
         // $(".min-temp").text("Temperature (F) " + response.main.min-temp);
@@ -304,9 +293,15 @@ if ($('#newContact').length > 0 ) {
        
         // Log the data in the console as well
         console.log("Wind Speed: " + response.wind.speed);
+<<<<<<< HEAD
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature: " + response.main.temp);
     });
+=======
+        console.log("Humidity: " + response.main.humidity);
+        console.log("Temperature: " + response.main.temp);
+      });
+>>>>>>> 8af6b785b1ce583d88c4c68684706738f43ce428
 
 
 
