@@ -169,6 +169,9 @@ btnLogin.click(function(){
   //sign in
   var promise = auth.createUserWithEmailAndPassword(email, password);
   promise.catch(event => console.log(event.message));
+    $('#wrongRegister').css({
+      display:'block'
+    })
   });
 
   //log out buttons
