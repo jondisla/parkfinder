@@ -154,7 +154,9 @@ btnLogin.click(function(){
 //sign in
   var promise = auth.signInWithEmailAndPassword(email, password);
   promise.catch(event => console.log(event.message))
-  
+  $('#wrongPassword').css({
+    display:'block'
+  })
   })
 
   btnRegister.click(function(event){
@@ -196,17 +198,23 @@ btnLogin.click(function(){
   })
   //change state when user is registered
 
+  var email = txtEmail.val();
+
   firebase.auth().onAuthStateChanged(firebaseUser=> {
+
     if (firebaseUser) {
       console.log('User Logged in')
       $('#modal1').html('User Logged in')
       btnLogout.show();
       navLogout.show()
       $('#dropLogout').show();
+      $('#favorites').show()
       btnindexLogin.hide();
       navLogin.hide();
       $('#dropLogin').hide();
-      $('#favorites').show()
+      
+
+      
     }else{
       $('#favorites').hide()
       console.log('Logged out');
@@ -216,6 +224,8 @@ btnLogin.click(function(){
       btnindexLogin.show();
       navLogin.show()
       $('#dropLogin').show();
+      
+      
     }
   })
 

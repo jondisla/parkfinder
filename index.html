@@ -12,16 +12,20 @@
 
 </head>
 <body>
-    <div class="container main ">
-
-        <!--top LOGIN button-->
-
-        <div class="background-image"></div>
-        <li id="indexLogout" style="cursor:pointer;position:absolute;right:0;">Logout</li>
-        <a class="modal-trigger" href="#modal1"><li id="indexLogin" style="cursor:pointer;position:absolute;right:0;">Login</a></li>
-        <div class="title">
+    <div class="title">
             <img class="responsive-img" src="assets/images/park-finder-logo.png"/>
         </div>
+    <div class="container main ">
+
+        
+
+        <div class="background-image"></div>
+
+        <!--top LOGIN button-->
+        <li id="indexLogout" style="cursor:pointer;position:absolute;right:0;">Logout</li>
+        <a class="waves-effect waves-light btn modal-trigger waves-effect" href="#modal1" id="indexLogin" style="position:absolute; top:0; right:0;">Login</a>
+
+        
         
          <!-- Search -->
 
@@ -50,8 +54,7 @@
                         <div class="col s6 z-depth-6 card-panel">
                                 <h6>Sign in</h6>
                             <form class="login-form" id="login-page">
-                            <div class="row">
-                            </div>
+                            <div id="wrongPassword" style="color:red;display:none;">Incorrect email or password</div>
                             <div class="row">
                                 <div class="input-field col s12">
                                 <input class="validate" id="email" type="email">
@@ -69,9 +72,9 @@
                                 <div id="btnLogin" class="btn waves-effect waves-light col s12" required>Login</div>
                             </div>
                             <div class="row">
-                                    <div class="input-field col s12 m12 l12">
+                                <div class="input-field col s12 m12 l12">
                                     <center><p class="margin medium-small"><div id="register" style="cursor:pointer;">Register Now!</div></p></center>
-                                    </div>
+                                </div>
                             </div>
                             </form>
                         </div>
