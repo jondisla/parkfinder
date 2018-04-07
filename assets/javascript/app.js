@@ -1,3 +1,7 @@
+// Weather API Data
+var APIKey = "2e2abb20095913cfcde631825a6e337d";
+
+var locationLoop = ["q=okeechobee,Florida","q=Biscayne,Florida","q=Cape Canaveral","q=Saint Augustine,Florida","q=Bradenton,Florida","q=Stock Island","q=Biscayne,Florida","q=Saint Augustine,Florida","q=Gulf Breeze,Florida","q=Jacksonville,Florida"]; 
 
 // Array holding all Florida Parks Code
 var Parks_IDs = ['drto', 'casa', 'bicy', 'bisc', 'cana', 'deso', 'ever', 'timu', 'foma', 'guis'];
@@ -51,10 +55,11 @@ jQuery(document).ready(function($){
               </div>
               <div class="card-action">
                   <a href="content.html?parkCode=${ parkCode }">More +</a>
-                 <a id="temperature" class="right"> ºF</a>    
+                 <a id="temperature" class="right"> <span data-temperature="${ parkCode }"></span> ºF</a>   
               </div>
           </div>
         `;
+        //data-temperature= add parkCode(Parks Ids loop)
         // Building the parks.html/ ES6
         $('#parks-page').append(parkBlock); //Append the whole block
   
@@ -64,12 +69,25 @@ jQuery(document).ready(function($){
 
 
         $('#parks-list').append(dropdownContent);
+        fillTemperature(parkCode);//It is a function because the ajax was being executed before the element been created
         
       } //Building the dropwdown on the index.html/ Also directing to correct page when the park is chose
   
  
 
     }); // then
+    
+    function fillTemperature(parkCode) {
+      var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + parkInfo[parkCode].weather + "&units=imperial&appid="+ APIKey;
+        //parkInfo[parkCode].weather= displays the weather on park-info.js in each specific park.
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+        .then(function(res) {
+          $('[data-temperature="'+ parkCode +'"]').text( res.main.temp );//display the temperature on html / parkCode is the loop
+        });
+    }
     
     //Creating an hidden input, so when the function only executed on the content.html page/ park_detail is the value on the html
     if( $('#PAGE_NAME').val() == 'park_detail' ) {
@@ -103,8 +121,21 @@ jQuery(document).ready(function($){
         $('#google-input img').attr('src', moreInfo[parkCode].googleImage); //Google Pin
         $('#park-image').attr('src', moreInfo[parkCode].mainImage); //Main Image
         
+        
+        // Fill Weather
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + parkInfo[parkCode].weather + "&units=imperial&appid="+ APIKey;
+        
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+        .then(function(res) {
+          $('#temperature').text( res.main.temp + ' ºF' );
+        });
+        
         console.log(park);
         console.log(moreInfo[parkCode]);
+        //same explanation as above 
         
         
       });
@@ -120,7 +151,7 @@ $('#favorites').hide()
 
   $('.modal').modal();
 
-//Log in
+                    //Log in
 
 var config = {
   apiKey: "AIzaSyAKclrngrWoi9mPYbc821PlWrljn22nrAI",
@@ -248,43 +279,6 @@ navLogin.click(function() {
 
 
 //Open Weather, Add photos on park-info.js, google directions, add favorites and also append on Favorites.html and local storage 
-
-
-
-
-
-// Weather API //
-    // This is our API key
-    var APIKey = "2e2abb20095913cfcde631825a6e337d";
-    // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-      "q=Orlando,Florida&units=imperial&appid=" + APIKey;
-    // Here we run our AJAX call to the OpenWeatherMap API
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      // We store all of the retrieved data inside of an object called "response"
-      .then(function(response) {
-        // Log the queryURL
-        console.log(queryURL);
-        // Log the resulting object
-        console.log(response);
-        // Transfer content to HTML
-        $("#weather-name").html(response.name);
-        // $(".wind").text("Wind Speed: " + response.wind.speed);
-        // $(".humidity").text("Humidity: " + response.main.humidity);
-        $("#temperature").text("Temperature: " + response.main.temp);
-        // $(".min-temp").text("Temperature (F) " + response.main.min-temp);
-        // $(".max-temp").text("Temperature (F) " + response.main.temp);
-       
-       
-        // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("Humidity: " + response.main.humidity);
-        console.log("Temperature: " + response.main.temp);
-      });
-
 
 
 //GOOGLE API GOES HERE//

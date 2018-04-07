@@ -14,7 +14,7 @@ body {
 
         /* Front Page  */
 .background-image {
-    background-image: url("../../assets/images/back.jpg");
+    background-image: url("../../assets/images/back1.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center;
@@ -89,6 +89,7 @@ body {
 .search-content {
     margin-top: 100px;
 }
+
 .dropdown-main {
     text-align: center;
 }
@@ -133,11 +134,20 @@ body {
     border-bottom: 1px solid;
 }
 
-#all-parks{
-    color:rgb(255, 255, 255);
-    font-size: 20px;
+#search-parks:hover{
+    background: rgb(129, 103, 80);
 }
 
+#all-parks{
+    color:#5B6539;
+    font-size: 20px;
+    font-weight: bold;
+    /* text-decoration: none; */
+}
+
+#all-parks:hover{
+    color: rgb(141, 167, 57);
+}
 
 #indexLogout{
     color: #71842B;
@@ -148,6 +158,7 @@ body {
     top: 0;
 }
             /* Parks Content */
+
 .park {
     padding: 0px 60px 15px 60px;
     background-color: #fff;
@@ -182,6 +193,7 @@ body {
 
 
          /* ABOUT  */
+
 .about-us {
     width: 100%;
     text-align: center
@@ -207,18 +219,20 @@ body {
     width: 250px;
 }
 .us img:hover {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
     transform: scale(1.1);
 
 }
 .us p {
     font-size: 20px;
 }
+textarea:focus {
+    outline:none;
+    border:1px solid #229c8f;
+    box-shadow: 0 0 10px #229c8f;
+}
 
 /* Forms */
+
 
 
 .btn-submit {
@@ -241,6 +255,11 @@ border-bottom: 1px solid;
 }
 
         /* Content Page */
+.content-park {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 .content {
     margin-top: 30px;
     margin-bottom: 100px;
@@ -253,6 +272,11 @@ border-bottom: 1px solid;
     color:#4E2D12;
     font-size: 50px;
     margin: 0 0 20px 0;
+}
+#park-description p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #get-directions{
@@ -314,7 +338,10 @@ footer {
 @media (max-width: 992px){
     .dropdown-trigger i {
         padding-right: 45px;
+    }
+    .nav-wrapper ul li a {
         background-color: #6d6b6b;
+        margin:0;
     }
     #indexLogin {
         font-size: 20px;
@@ -335,6 +362,13 @@ footer {
         display:block;
         margin: 0 auto;
     }
+    .about-us p {
+        margin: 0
+    }
+    .us {
+        width: 100%;
+        text-align: center;
+    }
     
     .content-page p {
         margin-bottom: 40px;
@@ -346,10 +380,16 @@ footer {
     #indexLogin {
         font-size: 14px;
     }
+
+
 }
-   
+
+/*ABOUT*/
 
 
+.profile-photo{
+    border-radius: 50%;
+}
 
 
 

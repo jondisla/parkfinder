@@ -4,14 +4,16 @@ var parkInfo = {
         address: "40001 SR-9336 Homestead, FL 33034",
         hours: "9:00 am - 4:00 pm",
         googleImage: "assets/images/mainImage/drytortugasPin.png",
-        mainImage: "assets/images/mainImage/drytortugas.jpg"
+        mainImage: "assets/images/mainImage/drytortugas.jpg",
+        weather:"Stock Island"
     },
     casa: {
         phone: "(904) 829-6506",
         address: "1 South Castillo Drive Saint Augustine, FL 32084",
         hours: " 8:00 am - 6:00 pm",
         googleImage: "assets/images/mainImage/castilloPin.png",
-        mainImage: "assets/images/mainImage/castillo.jpg"
+        mainImage: "assets/images/mainImage/castillo.jpg",
+        weather:"Saint Augustine,Florida"
         
     },
      bicy: {
@@ -19,15 +21,18 @@ var parkInfo = {
         address: "33100 Tamiami Trail East Ochopee, FL 34141",
         hours: " 9:00 am - 4:30 pm",
         googleImage: "assets/images/mainImage/bigcypressPin.png",
-        mainImage: "assets/images/mainImage/bigcypress.jpg"
+        mainImage: "assets/images/mainImage/bigcypress.jpg",
+        weather:"okeechobee,Florida"  
         
     },
     bisc: {
         phone: "(305) 230-1144",
-        address: "33100 Tamiami Trail East Ochopee, FL 34141",
+        address: "9700 SW 328th Street,Homestead, FL 33033 ",
         hours: " Open 24 hours",
         googleImage: "assets/images/mainImage/biscaynePin.png",
-        mainImage: "assets/images/mainImage/biscayne.jpg"
+        mainImage: "assets/images/mainImage/biscayne.jpg",
+        weather:"Biscayne,Florida"
+        
         
     },
     cana: {
@@ -35,7 +40,8 @@ var parkInfo = {
         address: "212 S Washington Ave Titusville, FL 32796",
         hours: " 6:00 am - 6:00 pm",
         googleImage: "assets/images/mainImage/canaveralPin.png",
-        mainImage: "assets/images/mainImage/canaveral.jpg"
+        mainImage: "assets/images/mainImage/canaveral.jpg",
+        weather:"Cape Canaveral"
         
     },
     deso: {
@@ -43,7 +49,8 @@ var parkInfo = {
         address: "8300 De Soto Memorial Hwy Bradenton, FL 34209",
         hours: " 9:00 am to 5:00 pm",
         googleImage: "assets/images/mainImage/desotoPin.png",
-        mainImage: "assets/images/mainImage/desoto.jpg"
+        mainImage: "assets/images/mainImage/desoto.jpg",
+        weather:"Bradenton,Florida"
         
     },
     ever: {
@@ -51,7 +58,8 @@ var parkInfo = {
         address: "40001 State Road 9336 Homestead, FL 33034",
         hours: " Open 24 hours",
         googleImage: "assets/images/mainImage/evergladesPin.png",
-        mainImage: "assets/images/mainImage/ever.jpg"
+        mainImage: "assets/images/mainImage/ever.jpg",
+        weather:"Biscayne,Florida"
         
     },
     timu: {
@@ -59,7 +67,8 @@ var parkInfo = {
         address: "12713 Fort Caroline Road Jacksonville, FL 32225",
         hours: " 9:00 am to 5:00 pm",
         googleImage: "assets/images/mainImage/timucuanPin.png",
-        mainImage: "assets/images/mainImage/timucuan.jpg"
+        mainImage: "assets/images/mainImage/timucuan.jpg",
+        weather:"Jacksonville,Florida"
         
     },
     foma: {
@@ -67,7 +76,8 @@ var parkInfo = {
         address: "8635 A1A South Saint Augustine, FL 32080",
         hours: " 9:00 am to 5:30 pm",
         googleImage: "assets/images/mainImage/fortmatanzasPin.png",
-        mainImage: "assets/images/mainImage/fortmatanzas.jpg"
+        mainImage: "assets/images/mainImage/fortmatanzas.jpg",
+        weather:"Saint Augustine,Florida"
         
     },
     guis: {
@@ -75,7 +85,8 @@ var parkInfo = {
         address: "1801 Gulf Breeze Parkway Gulf Breeze, FL 32563",
         hours: " Open 24 Hours",
         googleImage: "assets/images/mainImage/gulfislandPin.png",
-        mainImage: "assets/images/mainImage/gulfIslands.jpg"
+        mainImage: "assets/images/mainImage/gulfIslands.jpg",
+        weather:"Gulf Breeze,Florida"
         
     }
 }
