@@ -10,13 +10,12 @@ Currently available for 10 of the best parks in the state of Florida.
   * In order to see the favorites page it is neccessary to register to the site.
   * In the about page a brief message from the team and pictures of team members as well as a contact form.
 
-Front End
+Front End - Giovanna Perina
 ---
-Materialize
+Materialize, Font Awesome, Jquery
 
-Back End
+Back End - Jose Araujo, Christopher Hebeler, Jon Disla
 ---
 Google Maps API, Open Weather API and NPS API.  Firebase authorization and Form Spree for contact list information.
 
 ---
-Currently under production.
